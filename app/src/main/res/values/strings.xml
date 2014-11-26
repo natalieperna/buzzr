@@ -2,6 +2,8 @@
 <resources>
 
     <string name="app_name">Doorbell</string>
-    <string name="hello_world">Hello world!</string>
+    <string name="allowEntryButtonText">Come on in!</string>
+    <string name="disallowEntryButtonText">Get Out!</string>
+    <string name="talkButtonText">Talk to me!</string>
 
 </resources>
