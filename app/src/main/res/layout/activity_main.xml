@@ -1,98 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/building6"
+    android:orientation="vertical"
     android:weightSum="1">
 
     <TextView
+        android:id="@+id/inc"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
-        android:text="incoming"
-        android:id="@+id/inc"
         android:layout_gravity="center"
-        android:textAlignment="center"
-        android:capitalize="none"
-        android:textColor="#ff000000"
-        android:textSize="43dp"
-        android:typeface="monospace"
         android:layout_marginTop="55dp"
         android:autoText="false"
-        android:clickable="false"
-        android:editable="false" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="call"
-        android:id="@+id/call"
-        android:layout_gravity="center"
-        android:textAlignment="center"
         android:capitalize="none"
+        android:clickable="false"
+        android:editable="false"
+        android:text="incoming"
+        android:textAlignment="center"
         android:textColor="#ff000000"
         android:textSize="43dp"
-        android:typeface="monospace"
+        android:typeface="monospace" />
+
+    <TextView
+        android:id="@+id/call"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
         android:layout_marginBottom="70dp"
         android:autoText="false"
+        android:capitalize="none"
         android:clickable="false"
-        android:editable="false" />
-
+        android:editable="false"
+        android:text="call"
+        android:textAlignment="center"
+        android:textColor="#ff000000"
+        android:textSize="43dp"
+        android:typeface="monospace" />
 
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        android:orientation="horizontal">
 
         <Button
-            android:layout_width="10dp"
-            android:layout_height="60dp"
-
-            android:textColor="#000000"
-            android:typeface="monospace"
-            android:text="@string/talkButtonText"
             android:id="@+id/talkButton"
-            android:textSize="16dp"
+            android:layout_width="10dp"
+
+            android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/roundedbuttongreen"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0.03"
             android:layout_marginBottom="25dp"
             android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp" />
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="0.03"
+            android:background="@drawable/roundedbuttongreen"
+            android:text="@string/talkButtonText"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:typeface="monospace" />
 
         <Button
+            android:id="@+id/disallowEntryButton"
             android:layout_width="10dp"
             android:layout_height="60dp"
-            android:textColor="#000000"
-            android:typeface="monospace"
-            android:text="@string/disallowEntryButtonText"
-            android:id="@+id/disallowEntryButton"
-            android:textSize="16dp"
             android:layout_gravity="center_horizontal"
-            android:background="@drawable/roundedbuttonred"
-            android:layout_weight="0.03"
             android:layout_marginLeft="25dp"
             android:layout_marginRight="25dp"
-            android:capitalize="none" />
+            android:layout_weight="0.03"
+            android:background="@drawable/roundedbuttonred"
+            android:capitalize="none"
+            android:text="@string/disallowEntryButtonText"
+            android:textColor="#000000"
+            android:textSize="16dp"
+            android:typeface="monospace" />
     </LinearLayout>
 
     <Button
+        android:id="@+id/allowEntryButton"
         android:layout_width="135dp"
         android:layout_height="60dp"
-        android:textColor="#000000"
-        android:typeface="monospace"
-        android:text="@string/allowEntryButtonText"
-        android:id="@+id/allowEntryButton"
-        android:textSize="16dp"
         android:layout_gravity="center_horizontal"
-        android:background="@drawable/roundedbuttonblue"
-        android:layout_marginTop="20dp"
-        android:layout_weight="0.03"
         android:layout_marginBottom="25dp"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="25dp"
+        android:layout_marginTop="20dp"
+        android:layout_weight="0.03"
+        android:background="@drawable/roundedbuttonblue"
+        android:text="@string/allowEntryButtonText"
+        android:textColor="#000000"
+        android:textSize="16dp"
+        android:typeface="monospace" />
 
 </LinearLayout>
