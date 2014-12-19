@@ -9,36 +9,17 @@
 
     <TextView
         android:id="@+id/inc"
-        android:layout_width="220dp"
+        android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="55dp"
-        android:autoText="false"
-        android:capitalize="none"
+        android:layout_marginBottom="55dp"
         android:clickable="false"
-        android:editable="false"
-        android:text="incoming"
-        android:textAlignment="center"
+        android:gravity="center"
+        android:text="@string/incoming"
         android:textColor="#ff000000"
-        android:textSize="43dp"
+        android:textSize="43sp"
         android:typeface="monospace" />
-
-    <TextView
-        android:id="@+id/call"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="70dp"
-        android:autoText="false"
-        android:capitalize="none"
-        android:clickable="false"
-        android:editable="false"
-        android:text="call"
-        android:textAlignment="center"
-        android:textColor="#ff000000"
-        android:textSize="43dp"
-        android:typeface="monospace" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,7 +41,7 @@
             android:background="@drawable/roundedbuttongreen"
             android:text="@string/talkButtonText"
             android:textColor="#000000"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:typeface="monospace" />
 
         <Button
@@ -72,10 +53,9 @@
             android:layout_marginRight="25dp"
             android:layout_weight="0.03"
             android:background="@drawable/roundedbuttonred"
-            android:capitalize="none"
             android:text="@string/disallowEntryButtonText"
             android:textColor="#000000"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:typeface="monospace" />
     </LinearLayout>
 
@@ -92,7 +72,7 @@
         android:background="@drawable/roundedbuttonblue"
         android:text="@string/allowEntryButtonText"
         android:textColor="#000000"
-        android:textSize="16dp"
+        android:textSize="16sp"
         android:typeface="monospace" />
 
 </LinearLayout>

@@ -113,6 +113,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
         }
     }
 
+    // @todo This doesn't work if you haven't answered the call first for some reason
     public void send9() {
         sound.stop();
         if (connection != null) {
