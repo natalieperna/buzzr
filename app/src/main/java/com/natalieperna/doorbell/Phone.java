@@ -33,7 +33,7 @@ public class Phone implements Twilio.InitListener, DeviceListener {
     @Override
     public void onInitialized() {
         RequestQueue queue = Volley.newRequestQueue(context);
-        String url = "https://doorbell-voip-server.herokuapp.com/auth.php?clientName=doorbell";
+        String url = "https://doorbell-app-server.herokuapp.com/auth.php?clientName=doorbell";
 
         StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
