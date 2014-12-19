@@ -17,6 +17,8 @@ import com.twilio.client.DeviceListener;
 import com.twilio.client.PresenceEvent;
 import com.twilio.client.Twilio;
 
+import java.io.IOException;
+
 class Phone implements Twilio.InitListener, DeviceListener {
     private static final String TAG = "Phone";
 
@@ -27,6 +29,8 @@ class Phone implements Twilio.InitListener, DeviceListener {
 
     public Phone(Context context) {
         this.context = context;
+        sound = MediaPlayer.create(context, R.raw.doorbell);
+        sound.setLooping(true);
         Twilio.initialize(context, this);
     }
 
@@ -92,13 +96,12 @@ class Phone implements Twilio.InitListener, DeviceListener {
         if (connection != null)
             connection.disconnect();
         connection = inConnection;
-        sound = MediaPlayer.create(context, R.raw.doorbell);
-        sound.setLooping(true);
+
         sound.start();
     }
 
     public void disconnect() {
-        sound.stop();
+        resetRingtone();
         if (connection != null) {
             connection.disconnect(); // if call has been accepted
             connection.reject(); // if call hasn't been accepted
@@ -107,7 +110,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
     }
 
     public void accept() {
-        sound.stop();
+        resetRingtone();
         if (connection != null) {
             connection.accept();
         }
@@ -115,11 +118,20 @@ class Phone implements Twilio.InitListener, DeviceListener {
 
     // @todo This doesn't work if you haven't answered the call first for some reason
     public void send9() {
-        sound.stop();
+        resetRingtone();
         if (connection != null) {
             connection.accept();
             connection.sendDigits("9"); // Send DTMF tone
             connection.disconnect();
+        }
+    }
+
+    private void resetRingtone() {
+        sound.stop();
+        try {
+            sound.prepare();
+        } catch (IOException e) {
+            Log.e(TAG, "Couldn't prepare ringtone");
         }
     }
 

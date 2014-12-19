@@ -6,5 +6,6 @@
     <string name="disallowEntryButtonText">Get Out!</string>
     <string name="talkButtonText">Talk to me!</string>
     <string name="incoming">incoming call</string>
+    <string name="title">Doorbell App</string>
 
 </resources>

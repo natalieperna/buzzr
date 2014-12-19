@@ -8,71 +8,17 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/inc"
+        android:id="@+id/title"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="55dp"
         android:layout_marginBottom="55dp"
+        android:layout_marginTop="55dp"
         android:clickable="false"
         android:gravity="center"
-        android:text="@string/incoming"
+        android:text="@string/title"
         android:textColor="#ff000000"
         android:textSize="43sp"
-        android:typeface="monospace" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/talkButton"
-            android:layout_width="10dp"
-
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="25dp"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="20dp"
-            android:layout_weight="0.03"
-            android:background="@drawable/roundedbuttongreen"
-            android:text="@string/talkButtonText"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:typeface="monospace" />
-
-        <Button
-            android:id="@+id/disallowEntryButton"
-            android:layout_width="10dp"
-            android:layout_height="60dp"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginLeft="25dp"
-            android:layout_marginRight="25dp"
-            android:layout_weight="0.03"
-            android:background="@drawable/roundedbuttonred"
-            android:text="@string/disallowEntryButtonText"
-            android:textColor="#000000"
-            android:textSize="16sp"
-            android:typeface="monospace" />
-    </LinearLayout>
-
-    <Button
-        android:id="@+id/allowEntryButton"
-        android:layout_width="135dp"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginTop="20dp"
-        android:layout_weight="0.03"
-        android:background="@drawable/roundedbuttonblue"
-        android:text="@string/allowEntryButtonText"
-        android:textColor="#000000"
-        android:textSize="16sp"
         android:typeface="monospace" />
 
 </LinearLayout>
