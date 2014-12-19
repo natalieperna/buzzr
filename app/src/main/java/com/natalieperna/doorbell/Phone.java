@@ -17,7 +17,7 @@ import com.twilio.client.DeviceListener;
 import com.twilio.client.PresenceEvent;
 import com.twilio.client.Twilio;
 
-public class Phone implements Twilio.InitListener, DeviceListener {
+class Phone implements Twilio.InitListener, DeviceListener {
     private static final String TAG = "Phone";
 
     private Context context;
