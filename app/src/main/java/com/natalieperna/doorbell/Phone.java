@@ -26,12 +26,14 @@ class Phone implements Twilio.InitListener, DeviceListener {
     private Device device;
     private Connection connection;
     private MediaPlayer sound;
+    private Boolean isAccepted;
 
     public Phone(Context context) {
         this.context = context;
         sound = MediaPlayer.create(context, R.raw.doorbell);
         sound.setLooping(true);
         Twilio.initialize(context, this);
+        isAccepted = false;
     }
 
     @Override
@@ -39,12 +41,12 @@ class Phone implements Twilio.InitListener, DeviceListener {
         RequestQueue queue = Volley.newRequestQueue(context);
         String url = "https://doorbell-app-server.herokuapp.com/auth.php?clientName=doorbell";
 
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+        final StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String capabilityToken) {
                         device = Twilio.createDevice(capabilityToken, Phone.this);
-
+                        Log.e(TAG, "PEEE " + context);
                         Intent intent = new Intent(context, MainActivity.class);
                         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                         device.setIncomingIntent(pendingIntent);
@@ -59,6 +61,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
             connection.disconnect();
         if (device != null)
             device.release();
+        isAccepted = false;
     }
 
     @Override
@@ -91,14 +94,22 @@ class Phone implements Twilio.InitListener, DeviceListener {
     public void onPresenceChanged(Device inDevice, PresenceEvent inPresenceEvent) {
     }
 
+
+    public void onDisconnected(Connection inConnection){
+        disconnect();
+        finalize();
+    }
+
     public void handleIncomingConnection(Device inDevice, Connection inConnection) {
         Log.i(TAG, "Device received incoming connection");
         if (connection != null)
             connection.disconnect();
         connection = inConnection;
-
+        isAccepted = false;
         sound.start();
     }
+
+
 
     public void disconnect() {
         resetRingtone();
@@ -106,6 +117,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
             connection.disconnect(); // if call has been accepted
             connection.reject(); // if call hasn't been accepted
             connection = null;
+            isAccepted = false;
         }
     }
 
@@ -113,17 +125,23 @@ class Phone implements Twilio.InitListener, DeviceListener {
         resetRingtone();
         if (connection != null) {
             connection.accept();
+            isAccepted = true;
         }
     }
 
     // @todo This doesn't work if you haven't answered the call first for some reason
     public void send9() {
-        resetRingtone();
-        if (connection != null) {
-            connection.accept();
+        if (connection != null && isAccepted == true) {
+            resetRingtone();
             connection.sendDigits("9"); // Send DTMF tone
             connection.disconnect();
         }
+    }
+
+
+    public boolean checkAccepted(){
+        Log.e("9", isAccepted.toString());
+        return isAccepted;
     }
 
     private void resetRingtone() {
@@ -134,5 +152,6 @@ class Phone implements Twilio.InitListener, DeviceListener {
             Log.e(TAG, "Couldn't prepare ringtone");
         }
     }
+
 
 }
