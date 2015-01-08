@@ -46,7 +46,6 @@ class Phone implements Twilio.InitListener, DeviceListener {
                     @Override
                     public void onResponse(String capabilityToken) {
                         device = Twilio.createDevice(capabilityToken, Phone.this);
-                        Log.e(TAG, "PEEE " + context);
                         Intent intent = new Intent(context, MainActivity.class);
                         PendingIntent pendingIntent = PendingIntent.getActivity(context, 0, intent, PendingIntent.FLAG_UPDATE_CURRENT);
                         device.setIncomingIntent(pendingIntent);
@@ -95,10 +94,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
     }
 
 
-    public void onDisconnected(Connection inConnection){
-        disconnect();
-        finalize();
-    }
+
 
     public void handleIncomingConnection(Device inDevice, Connection inConnection) {
         Log.i(TAG, "Device received incoming connection");
@@ -140,7 +136,7 @@ class Phone implements Twilio.InitListener, DeviceListener {
 
 
     public boolean checkAccepted(){
-        Log.e("9", isAccepted.toString());
+        Log.e(TAG, isAccepted.toString());
         return isAccepted;
     }
 

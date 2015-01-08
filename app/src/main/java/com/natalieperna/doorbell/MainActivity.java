@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 
 import com.twilio.client.Connection;
@@ -17,6 +18,7 @@ public class MainActivity extends PhoneActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
     }
 
     @Override
@@ -42,8 +44,7 @@ public class MainActivity extends PhoneActivity {
             finish();
 
         }
-        else if (connection == null)
-            phone.onDisconnected(connection);
+
     }
 
 
@@ -54,6 +55,10 @@ public class MainActivity extends PhoneActivity {
                 break;
             case R.id.talkButton:
                 phone.accept();
+                TextView t;
+                t = new TextView(this);
+                t=(TextView)findViewById(R.id.inc);
+                t.setText("Call Connected");
                 break;
             case R.id.allowEntryButton:
                 if (phone.checkAccepted() == true) {
