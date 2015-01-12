@@ -9,28 +9,27 @@
 
     <TextView
         android:id="@+id/inc"
-        android:layout_width="fill_parent"
+        android:layout_width="303dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginBottom="55dp"
-        android:layout_marginTop="55dp"
+        android:layout_marginTop="25dp"
         android:clickable="false"
         android:gravity="center"
         android:text="@string/incoming"
         android:textColor="#ff000000"
-        android:textSize="43sp"
-        android:typeface="monospace" />
+        android:textSize="43sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="35dp"
         android:layout_gravity="center_horizontal"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/talkButton"
             android:layout_width="10dp"
-
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="25dp"
@@ -41,8 +40,7 @@
             android:background="@drawable/roundedbuttongreen"
             android:text="@string/talkButtonText"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:typeface="monospace" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/disallowEntryButton"
@@ -55,8 +53,7 @@
             android:background="@drawable/roundedbuttonred"
             android:text="@string/disallowEntryButtonText"
             android:textColor="#000000"
-            android:textSize="16sp"
-            android:typeface="monospace" />
+            android:textSize="16sp" />
     </LinearLayout>
 
     <Button
@@ -72,7 +69,6 @@
         android:background="@drawable/roundedbuttonblue"
         android:text="@string/allowEntryButtonText"
         android:textColor="#000000"
-        android:textSize="16sp"
-        android:typeface="monospace" />
+        android:textSize="16sp" />
 
 </LinearLayout>
