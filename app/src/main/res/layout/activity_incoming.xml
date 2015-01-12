@@ -8,7 +8,7 @@
     android:weightSum="1">
 
     <TextView
-        android:id="@+id/inc"
+        android:id="@+id/incomingMessage"
         android:layout_width="303dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -28,7 +28,7 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/talkButton"
+            android:id="@+id/allowEntryButton"
             android:layout_width="10dp"
             android:layout_height="60dp"
             android:layout_gravity="center_horizontal"
@@ -37,8 +37,8 @@
             android:layout_marginRight="25dp"
             android:layout_marginTop="20dp"
             android:layout_weight="0.03"
-            android:background="@drawable/roundedbuttongreen"
-            android:text="@string/talkButtonText"
+            android:background="@drawable/roundedbuttonblue"
+            android:text="@string/allowEntryButtonText"
             android:textColor="#000000"
             android:textSize="16sp" />
 
@@ -57,7 +57,7 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/allowEntryButton"
+        android:id="@+id/talkButton"
         android:layout_width="135dp"
         android:layout_height="60dp"
         android:layout_gravity="center_horizontal"
@@ -66,8 +66,8 @@
         android:layout_marginRight="25dp"
         android:layout_marginTop="20dp"
         android:layout_weight="0.03"
-        android:background="@drawable/roundedbuttonblue"
-        android:text="@string/allowEntryButtonText"
+        android:background="@drawable/roundedbuttongreen"
+        android:text="@string/talkButtonText"
         android:textColor="#000000"
         android:textSize="16sp" />
 

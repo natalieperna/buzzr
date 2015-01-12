@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.twilio.client.Connection;
 import com.twilio.client.Device;
@@ -55,6 +56,10 @@ public class IncomingActivity extends PhoneActivity implements View.OnClickListe
                 break;
             case R.id.talkButton:
                 phone.accept();
+                Button talkButton = (Button) findViewById(R.id.talkButton);
+                talkButton.setVisibility(View.INVISIBLE);
+                TextView message = (TextView) findViewById(R.id.incomingMessage);
+                message.setText("On call with guest...");
                 break;
             case R.id.allowEntryButton:
                 phone.send9();
